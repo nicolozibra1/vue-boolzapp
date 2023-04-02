@@ -26,14 +26,46 @@ body{
     height: 100%;
 }
 
+/* SIDEBAR */
+
+/* HEADER-SIDE */
 .header-col{
     height: 70px;
-    background-color: black;
 }
+#my-pic{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+.my-option i{
+    padding: 10px;
+    font-size: 1.3rem;
+    color: var(--icon-grey);
+}
+
+/* BANNER */
 .banner{
     height: 80px;
     background-color: var(--blue-banner);
 }
+.box-bell{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 50%;;
+}
+.box-bell i{
+    font-size: 1.3rem;
+    color: var(--blue-banner);
+}
+.active-notice{
+    font-size: 0.8rem;
+    color: grey;
+    text-decoration: underline;
+}
+
+/* SEARCH-BAR */
 .search-contacts{
     height: 45px;
     border: none;
@@ -46,10 +78,14 @@ body{
     border-right: 1px solid lightgrey;
     color: var(--icon-grey);
 }
+
+/* RECENTLY CONTACT */
 .container-contacts{
     height:calc(100vh - 225px);
     overflow: scroll;
 }
+
+/* CARD CONTACT */
 .container-profile-pic, .last-mex-hour{
     width: 20%;
 }
@@ -57,7 +93,6 @@ body{
     width: 60px;
     height: 60px;
     margin-left: 10px;
-    
 }
 .box-pic img{
     width: 100%;
