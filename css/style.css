@@ -104,3 +104,26 @@ body{
     color: var(--icon-grey);
     font-size: 0.9rem;
 }
+
+
+/* CHAT CONTAINER */
+#col-chat{
+    border-left: 1px solid lightgrey;
+}
+.chat-container{
+    height: calc(100vh - 180px);
+    overflow-y: scroll;
+    background-image: url(../img/mine.jpg);
+}
+footer{
+    height: 60px;
+}
+footer i{
+    font-size:1.3rem;
+    color: var(--icon-grey);
+}
+.emoji, .record-voice{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
