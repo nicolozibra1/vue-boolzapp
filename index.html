@@ -50,15 +50,15 @@
                             <!-- CONTACTS-LIST (RECENTLY) -->
                             <div class="container-contacts d-flex flex-column">
                                 <!-- CARD-CONTACT -->
-                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2">
+                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2" v-for="(contact, index) in contacts">
                                     <div class="container-profile-pic d-flex justify-content-center ">
                                         <div class="box-pic ">
-                                            <img src="./img/avatar_1.jpg" alt="">
+                                            <img :src="contact.avatar" alt="">
                                         </div>         
                                     </div>
                                     <div class="box-this-chat w-100 p-2 pt-1 ">
                                         <div class="contact-name fw-semibold ps-2">
-                                            Michele
+                                            {{contact.name}}
                                         </div>
                                         <div class="last-mex ps-2">
                                             Ultimo messaggio inviato
