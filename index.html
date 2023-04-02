@@ -12,22 +12,50 @@
 <body>
     <div id="app">
         <body class="d-flex justify-content-center align-items-center">
+            <!-- WRAPPER -->
             <div class="wrapper">
                 <div class="row m-0">
+                    <!-- SIDEBAR-COLUMN -->
                     <div class="col-12 col-xl-4 p-0 debug">
                         <div id="sidebar" class="d-flex flex-column">
+                            <!-- HEADER-SIDE -->
                             <header class="header-col debug">
 
                             </header>
+                            <!-- BANNER -->
                             <div class="banner">
 
                             </div>
+                            <!-- SEARCH-BAR -->
                             <div class="search-contacts d-flex align-items-center justify-conter-center p-2">
                                 <i class="fa-solid fa-magnifying-glass px-4 rounded-1 rounded-end-0"></i>
                                 <input class="w-100 px-1 border-0 py-1 rounded-1 rounded-start-0" type="search" placeholder="Cerca o inizia una nuova chat">
                             </div>
+                            <!-- CONTACTS-LIST (RECENTLY) -->
+                            <div class="container-contacts d-flex flex-column">
+                                <!-- CARD-CONTACT -->
+                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2">
+                                    <div class="container-profile-pic d-flex justify-content-center debug">
+                                        <div class="box-pic debug">
+                                            <img src="./img/avatar_1.jpg" alt="">
+                                        </div>         
+                                    </div>
+                                    <div class="box-this-chat w-100 p-2 pt-1 debug">
+                                        <div class="contact-name fw-semibold ps-2">
+                                            Michele
+                                        </div>
+                                        <div class="last-mex ps-2">
+                                            Ultimo messaggio inviato
+                                        </div>
+                                    </div>
+                                    <div class="last-mex-hour pt-1 d-flex justify-content-center debug">
+                                        12:00
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- CHAT-COLUMN -->
                     <div class="col-12 col-xl-8 debug">
                         <!-- chat -->
                     </div>

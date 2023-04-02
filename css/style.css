@@ -7,9 +7,9 @@
     --icon-grey: #b1b1b1;
 }
 
-.debug{
+/* .debug{
     border:1px solid red;
-}
+} */
 
 body{
     height: 100vh;
@@ -20,10 +20,12 @@ body{
     background-color: var(--wrapper-grey);
     height: 95vh;
     width: 80vw;
+    overflow: hidden;
 }
 .row{
     height: 100%;
 }
+
 .header-col{
     height: 70px;
     background-color: black;
@@ -43,4 +45,27 @@ body{
     padding-bottom: 8px;
     border-right: 1px solid lightgrey;
     color: var(--icon-grey);
+}
+.container-contacts{
+    height:calc(100vh - 225px);
+    overflow: scroll;
+}
+.container-profile-pic, .last-mex-hour{
+    width: 20%;
+}
+.box-pic{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    
+}
+.box-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.last-mex, .last-mex-hour{
+    color: var(--icon-grey);
+    font-size: 0.9rem;
 }
