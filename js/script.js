@@ -26,12 +26,12 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            contacts: [
+            contacts:[
             {
                 id:1,
                 name: 'Michele',
                 avatar: './img/avatar_1.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -54,7 +54,7 @@ createApp({
                 id:2,
                 name: 'Fabio',
                 avatar: './img/avatar_2.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -77,7 +77,7 @@ createApp({
                 id:3,
                 name: 'Samuele',
                 avatar: './img/avatar_3.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -100,7 +100,7 @@ createApp({
                 id:4,
                 name: 'Alessandro B.',
                 avatar: './img/avatar_4.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -118,7 +118,7 @@ createApp({
                 id:5,
                 name: 'Alessandro L.',
                 avatar: './img/avatar_5.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -136,7 +136,7 @@ createApp({
                 id:6,
                 name: 'Claudia',
                 avatar: './img/avatar_5.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -159,7 +159,7 @@ createApp({
                 id:7,
                 name: 'Federico',
                 avatar: './img/avatar_7.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -177,7 +177,7 @@ createApp({
                 id:8,
                 name: 'Davide',
                 avatar: './img/avatar_8.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -196,12 +196,31 @@ createApp({
                     }
                 ],
             }
-            ],  
+            ],
+            currentChat: [],
+            current: "",
         }
     },
     
     methods: {
-
+        selectChat(index){
+            chatId = this.contacts[index].id;
+            if(chatId !== this.contacts[index]){
+                this.contacts[index].visible = true;
+            }
+            console.log(chatId)
+            console.log(this.contacts[index].visible)
+        },
+        chatSelected(index){
+            if(this.contacts[index].visible == true){
+                let current = this.contacts[index]
+                this.currentChat.push(current);
+                console.log(current)
+            }
+            else{
+                this.currentChat.splice(index, 1);
+            }
+        },
     },
     mounted() {
 

@@ -50,15 +50,15 @@
                             <!-- CONTACTS-LIST (RECENTLY) -->
                             <div class="container-contacts d-flex flex-column">
                                 <!-- CARD-CONTACT -->
-                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2" v-for="(contact, index) in contacts">
+                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2" v-for="(currentChat, index) in contacts" @click="selectChat(index), chatSelected(index)" :id="contacts.id">
                                     <div class="container-profile-pic d-flex justify-content-center ">
                                         <div class="box-pic ">
-                                            <img :src="contact.avatar" alt="">
+                                            <img :src="currentChat.avatar" alt="">
                                         </div>         
                                     </div>
                                     <div class="box-this-chat w-100 p-2 pt-1 ">
                                         <div class="contact-name fw-semibold ps-2">
-                                            {{contact.name}}
+                                            {{currentChat.name}}
                                         </div>
                                         <div class="last-mex ps-2">
                                             Ultimo messaggio inviato
@@ -77,11 +77,11 @@
                         <div id="main-chat" class="d-flex flex-column">
                             <!-- HEADER-CHAT -->
                             <header class="header-col d-flex align-items-center justify-content-between ">
-                                <div class="my-account d-flex align-items-center ">
-                                    <div class="box-pic " id="my-pic">
-                                        <img src="./img/avatar_3.jpg" alt="">
+                                <div class="my-account d-flex align-items-center" v-for="(contact, index) in currentChat">
+                                    <div :class="{'d-none': !currentChat[index].visible}" class="box-pic">
+                                        <img :src="contact.avatar" alt="">
                                     </div> 
-                                    <span class="fw-semibold">Nicolò</span>
+                                    <span class="fw-semibold d-none">Nicolò</span>
                                 </div>
                                 <div class="my-option pe-3 d-flex align-items-center">
                                     <i class="fa-solid fa-circle-notch"></i>
