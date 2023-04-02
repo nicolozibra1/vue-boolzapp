@@ -1,0 +1,46 @@
+:root{
+    --bg-green: #009688;
+    --bg-grey: #dbdbd3;
+    --wrapper-grey: #eaeaea;
+    --blue-banner: #8edafc;
+    --send-green: #d5f9ba;
+    --icon-grey: #b1b1b1;
+}
+
+.debug{
+    border:1px solid red;
+}
+
+body{
+    height: 100vh;
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(219,219,211,1) 15%, rgba(219,219,211,1) 100%);
+}
+.wrapper{
+    background-color: var(--wrapper-grey);
+    height: 95vh;
+    width: 80vw;
+}
+.row{
+    height: 100%;
+}
+.header-col{
+    height: 70px;
+    background-color: black;
+}
+.banner{
+    height: 80px;
+    background-color: var(--blue-banner);
+}
+.search-contacts{
+    height: 45px;
+    border: none;
+    background-color: var(--wrapper-grey);
+}
+.search-contacts i{
+    background-color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-right: 1px solid lightgrey;
+    color: var(--icon-grey);
+}
