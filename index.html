@@ -14,14 +14,14 @@
         <body class="d-flex justify-content-center align-items-center">
             <!-- WRAPPER -->
             <div class="wrapper">
-                <div class="row m-0">
+                <div class="row m-0" id="row-wrapper">
                     <!-- SIDEBAR-COLUMN -->
-                    <div class="col-12 col-xl-4 p-0 debug">
+                    <div class="col-12 col-xl-4 p-0 ">
                         <div id="sidebar" class="d-flex flex-column">
                             <!-- HEADER-SIDE -->
-                            <header class="header-col d-flex align-items-center justify-content-between debug">
-                                <div class="my-account d-flex align-items-center debug">
-                                    <div class="box-pic debug" id="my-pic">
+                            <header class="header-col d-flex align-items-center justify-content-between ">
+                                <div class="my-account d-flex align-items-center ">
+                                    <div class="box-pic " id="my-pic">
                                         <img src="./img/avatar_1.jpg" alt="">
                                     </div> 
                                     <span class="fw-semibold">Nicolò</span>
@@ -51,12 +51,12 @@
                             <div class="container-contacts d-flex flex-column">
                                 <!-- CARD-CONTACT -->
                                 <div class="card rounded-0 d-flex flex-row justify-content-between py-2">
-                                    <div class="container-profile-pic d-flex justify-content-center debug">
-                                        <div class="box-pic debug">
+                                    <div class="container-profile-pic d-flex justify-content-center ">
+                                        <div class="box-pic ">
                                             <img src="./img/avatar_1.jpg" alt="">
                                         </div>         
                                     </div>
-                                    <div class="box-this-chat w-100 p-2 pt-1 debug">
+                                    <div class="box-this-chat w-100 p-2 pt-1 ">
                                         <div class="contact-name fw-semibold ps-2">
                                             Michele
                                         </div>
@@ -64,7 +64,7 @@
                                             Ultimo messaggio inviato
                                         </div>
                                     </div>
-                                    <div class="last-mex-hour pt-1 d-flex justify-content-center debug">
+                                    <div class="last-mex-hour pt-1 d-flex justify-content-center ">
                                         12:00
                                     </div>
                                 </div>
@@ -73,12 +73,12 @@
                     </div>
 
                     <!-- CHAT-COLUMN -->
-                    <div class="col-12 col-xl-8 p-0" id="col-chat">
+                    <div class="col-12 col-xl-8 p-0" id="main-chat">
                         <div id="main-chat" class="d-flex flex-column">
                             <!-- HEADER-CHAT -->
-                            <header class="header-col d-flex align-items-center justify-content-between debug">
-                                <div class="my-account d-flex align-items-center debug">
-                                    <div class="box-pic debug" id="my-pic">
+                            <header class="header-col d-flex align-items-center justify-content-between ">
+                                <div class="my-account d-flex align-items-center ">
+                                    <div class="box-pic " id="my-pic">
                                         <img src="./img/avatar_3.jpg" alt="">
                                     </div> 
                                     <span class="fw-semibold">Nicolò</span>
@@ -90,18 +90,41 @@
                                 </div>
                             </header>
                             <!-- CHAT-CONTAINER -->
-                            <div class="chat-container debug">
-                                
+                            <div class="chat-container">
+                                <!-- ROW-SENT -->
+                                <div class="row m-0 mb-2 debug d-flex justify-content-end" id="sent">
+                                    <div class="col-6 debug">
+                                        <div class="mex-sent d-flex flex-column align-items-center gap-2">
+                                            <span class="mess-sent">Hai portato a spasso il cane?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ROW-SENT -->
+                                <div class="row m-0 mb-2 debug d-flex justify-content-end" id="sent">
+                                    <div class="col-6 debug">
+                                        <div class="mex-sent d-flex flex-column align-items-center gap-2">
+                                            <span class="mess-sent">Ricordati di stendere i panni</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ROW-RECEVIED -->
+                                <div class="row m-0  mb-2 debug" id="received">
+                                    <div class="col-6 debug">
+                                        <div class="mex-received d-flex flex-column align-items-center gap-2">
+                                            <span class="mess-recevied">Tutto fatto! Ieri sera sono andato a mangiare una pizza con i miei amici. Mi sono divertito!</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- FOOTER CHAT -->
-                            <footer class="d-flex justify-content-center align-items-center py-3 debug">
-                                <div class="emoji debug ">
+                            <footer class="d-flex justify-content-center align-items-center py-3 ">
+                                <div class="emoji  ">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
-                                <div class="write-in w-100 debug">
+                                <div class="write-in w-100 ">
                                     <input type="text" class="w-100 py-2 px-2 rounded-2 border-0" placeholder="Scrivi un messaggio">
                                 </div>
-                                <div class="record-voice debug">
+                                <div class="record-voice ">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
                             </footer>

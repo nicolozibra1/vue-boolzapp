@@ -22,7 +22,7 @@ body{
     width: 80vw;
     overflow: hidden;
 }
-.row{
+#row-wrapper{
     height: 100%;
 }
 
@@ -107,13 +107,29 @@ body{
 
 
 /* CHAT CONTAINER */
-#col-chat{
+#main-chat{
     border-left: 1px solid lightgrey;
 }
 .chat-container{
     height: calc(100vh - 180px);
     overflow-y: scroll;
+    overflow-x: hidden;
     background-image: url(../img/mine.jpg);
+    padding:60px 10px;
+}
+.mess-sent{
+    background-color: var(--send-green);
+    padding: 15px 15px;
+    border-radius: 8px;
+    width: 80%;
+    word-wrap: break-word;
+}
+.mess-recevied{
+    background-color: white;
+    padding: 15px 15px;
+    border-radius: 8px;
+    width: 75%;
+    word-wrap: break-word;
 }
 footer{
     height: 60px;
