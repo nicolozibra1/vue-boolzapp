@@ -199,6 +199,8 @@ createApp({
             ],
             visible: false,
             chatId: 0,
+            messageEvent: null
+            
             
             
         }
@@ -220,21 +222,16 @@ createApp({
             
         },
         messageStatus(index){
-            let input = null
-            let output = null
             for(let i = 0; i < this.contacts[index].messages.length; i++) {
                 currentStatus = this.contacts[index].messages[i].status
                 if(currentStatus === 'sent'){
-                    output = true;
-                    input = false;
+                    messageEvent = true;
                 }
                 else{
-                    input = true;
-                    output = false;
+                    messageEvent = false;
                 }
-                console.log(currentStatus, input);
-                }
-                
+                console.log(currentStatus, messageEvent);
+                }  
         }
     },
     mounted() {
