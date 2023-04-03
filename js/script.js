@@ -200,6 +200,7 @@ createApp({
             visible: false,
             chatId: 0,
             
+            
         }
     },
     
@@ -219,8 +220,19 @@ createApp({
             
         },
         messageStatus(index){
+            let input = null
+            let output = null
             for(let i = 0; i < this.contacts[index].messages.length; i++) {
-                console.log(this.contacts[index].messages[i].status);
+                currentStatus = this.contacts[index].messages[i].status
+                if(currentStatus === 'sent'){
+                    output = true;
+                    input = false;
+                }
+                else{
+                    input = true;
+                    output = false;
+                }
+                console.log(currentStatus, input);
                 }
                 
         }
