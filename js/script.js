@@ -198,7 +198,8 @@ createApp({
             }
             ],
             visible: false,
-            chatId: 0
+            chatId: 0,
+            
         }
     },
     
@@ -215,11 +216,18 @@ createApp({
             }
             console.log(chatId)
             console.log(this.contacts[index].visible)
-            console.log(this.contacts)
+            
         },
+        messageStatus(index){
+            for(let i = 0; i < this.contacts[index].messages.length; i++) {
+                console.log(this.contacts[index].messages[i].status);
+                }
+                
+        }
     },
     mounted() {
 
     }
+    
 }).mount('#app');
 
