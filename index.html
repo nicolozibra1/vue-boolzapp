@@ -50,7 +50,7 @@
                             <!-- CONTACTS-LIST (RECENTLY) -->
                             <div class="container-contacts d-flex flex-column">
                                 <!-- CARD-CONTACT -->
-                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2" v-for="(currentChat, index) in contacts" @click="selectChat(index), chatSelected(index)" :id="contacts.id">
+                                <div class="card rounded-0 d-flex flex-row justify-content-between py-2" v-for="(currentChat, index) in contacts" @click="selectChat(index)" :key="contacts[index].id">
                                     <div class="container-profile-pic d-flex justify-content-center ">
                                         <div class="box-pic ">
                                             <img :src="currentChat.avatar" alt="">
@@ -73,15 +73,15 @@
                     </div>
 
                     <!-- CHAT-COLUMN -->
-                    <div class="col-12 col-xl-8 p-0" id="main-chat">
-                        <div id="main-chat" class="d-flex flex-column">
+                    <div class="col-12 col-xl-8 p-0" id="main-chat" v-if="!contacts.visible">
+                        <div id="main-chat" class="d-flex flex-column" v-for="(contact, index) in contacts" :class="{'d-none': !contact.visible}">
                             <!-- HEADER-CHAT -->
-                            <header class="header-col d-flex align-items-center justify-content-between ">
-                                <div class="my-account d-flex align-items-center" v-for="(contact, index) in currentChat">
-                                    <div :class="{'d-none': !currentChat[index].visible}" class="box-pic">
+                            <header class="header-col d-flex align-items-center justify-content-between" >
+                                <div class="my-account d-flex align-items-center">
+                                    <div class="box-pic">
                                         <img :src="contact.avatar" alt="">
                                     </div> 
-                                    <span class="fw-semibold d-none">Nicolò</span>
+                                    <span class="fw-semibold">{{contact.name}}</span>
                                 </div>
                                 <div class="my-option pe-3 d-flex align-items-center">
                                     <i class="fa-solid fa-circle-notch"></i>
@@ -91,7 +91,8 @@
                             </header>
                             <!-- CHAT-CONTAINER -->
                             <div class="chat-container">
-                                <!-- ROW-SENT -->
+                                <div class="box-message">
+                                    <!-- ROW-SENT -->
                                 <div class="row m-0 mb-2 debug d-flex justify-content-end" id="sent">
                                     <div class="col-6 debug">
                                         <div class="mex-sent d-flex flex-column align-items-center gap-2">
@@ -116,6 +117,8 @@
                                     </div>
                                 </div>
                             </div>
+                                </div>
+                                
                             <!-- FOOTER CHAT -->
                             <footer class="d-flex justify-content-center align-items-center py-3 ">
                                 <div class="emoji  ">

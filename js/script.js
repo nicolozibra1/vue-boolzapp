@@ -197,29 +197,25 @@ createApp({
                 ],
             }
             ],
-            currentChat: [],
-            current: "",
+            visible: false,
+            chatId: 0
         }
     },
     
     methods: {
         selectChat(index){
-            chatId = this.contacts[index].id;
-            if(chatId !== this.contacts[index]){
-                this.contacts[index].visible = true;
+            chatId = index + 1;
+            for(let i=0; i < this.contacts.length; i++){
+                if(i === index){
+                    this.contacts[i].visible = true; // imposta il nuovo contatto su "true"
+                } 
+                else {
+                    this.contacts[i].visible = false; // imposta tutti gli altri contatti su "false"
+                }
             }
             console.log(chatId)
             console.log(this.contacts[index].visible)
-        },
-        chatSelected(index){
-            if(this.contacts[index].visible == true){
-                let current = this.contacts[index]
-                this.currentChat.push(current);
-                console.log(current)
-            }
-            else{
-                this.currentChat.splice(index, 1);
-            }
+            console.log(this.contacts)
         },
     },
     mounted() {

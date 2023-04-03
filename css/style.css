@@ -148,3 +148,7 @@ footer i{
     display: flex;
     justify-content: center;
 }
+
+.active{
+    display: block;
+}
