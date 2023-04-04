@@ -90,6 +90,13 @@ body{
 .card{
     border: transparent;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+.card:hover{
+    background-color: var(--wrapper-grey);
+}
+.active{
+    background-color: var(--wrapper-grey);
 }
 .container-profile-pic, .last-mex-hour{
     width: 20%;
@@ -161,8 +168,4 @@ footer i{
     width: 10%;
     display: flex;
     justify-content: center;
-}
-
-.active{
-    display: block;
 }

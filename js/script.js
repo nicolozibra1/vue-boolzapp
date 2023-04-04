@@ -32,6 +32,7 @@ createApp({
                 name: 'Michele',
                 avatar: './img/avatar_1.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -55,6 +56,7 @@ createApp({
                 name: 'Fabio',
                 avatar: './img/avatar_2.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '16:30',
@@ -78,6 +80,7 @@ createApp({
                 name: 'Samuele',
                 avatar: './img/avatar_3.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '10:10',
@@ -101,6 +104,7 @@ createApp({
                 name: 'Alessandro B.',
                 avatar: './img/avatar_4.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -119,6 +123,7 @@ createApp({
                 name: 'Alessandro L.',
                 avatar: './img/avatar_5.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -137,6 +142,7 @@ createApp({
                 name: 'Claudia',
                 avatar: './img/avatar_5.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -160,6 +166,7 @@ createApp({
                 name: 'Federico',
                 avatar: './img/avatar_7.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -178,6 +185,7 @@ createApp({
                 name: 'Davide',
                 avatar: './img/avatar_8.jpg',
                 visible: false,
+                active: false,
                 messages: [
                     {
                         date: '15:30',
@@ -198,12 +206,13 @@ createApp({
             }
             ],
             visible: false,
+            active: false,
             chatId: 0,
             textContent: '',
             textMessage: '',
             response: null,
             liveTime: null,
-            lastMessage: '',
+            lastMessage:''
 
 
         }
@@ -211,13 +220,14 @@ createApp({
     
     methods: {
         selectChat(index){
-            this.chatId = index + 1;
+            this.chatId = index;
             for(let i=0; i < this.contacts.length; i++){
                 if(i === index){
                     this.contacts[i].visible = true; // imposta il nuovo contatto su "true"
                 } 
                 else {
-                    this.contacts[i].visible = false; // imposta tutti gli altri contatti su "false"  
+                    this.contacts[i].visible = false; // imposta tutti gli altri contatti su "false"
+                    
                 }
             }
             console.log(this.chatId)
@@ -262,9 +272,12 @@ createApp({
         
  },
     mounted() {
-        for (let contact of this.contacts) {
-            const lastMessageIndex = contact.messages.length - 1;
-            this.lastMessage = contact.messages[lastMessageIndex].message;
+        for (currentChat of this.contacts) {
+            lastMessageIndex = currentChat.messages.length - 1;
+            this.lastMessage = currentChat.messages[lastMessageIndex].message;
+            
+            
+            
             console.log(this.lastMessage);
     }}
     
