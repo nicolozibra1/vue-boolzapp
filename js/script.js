@@ -200,7 +200,9 @@ createApp({
             visible: false,
             chatId: 0,
             textContent: '',
-            textMessage: '' 
+            textMessage: '',
+            response: null
+
 
         }
     },
@@ -234,6 +236,7 @@ createApp({
             };
             this.contacts[this.chatId].messages.push(newMessage);
             this.textMessage = ''
+            this.response = true;
             
             const botMessage = {
                 date: '',
@@ -242,6 +245,7 @@ createApp({
             };
             setTimeout(() => {
                 this.contacts[this.chatId].messages.push(botMessage);
+                this.response = false;
             },1500)
             
         }

@@ -19,7 +19,7 @@
                     <div class="col-12 col-xl-4 p-0 ">
                         <div id="sidebar" class="d-flex flex-column">
                             <!-- HEADER-SIDE -->
-                            <header class="header-col d-flex align-items-center justify-content-between ">
+                            <header class="header-col d-flex align-items-center justify-content-between">
                                 <div class="my-account d-flex align-items-center ">
                                     <div class="box-pic " id="my-pic">
                                         <img src="./img/avatar_1.jpg" alt="">
@@ -80,8 +80,12 @@
                                 <div class="my-account d-flex align-items-center">
                                     <div class="box-pic">
                                         <img :src="contact.avatar" alt="">
-                                    </div> 
-                                    <span class="fw-semibold">{{contact.name}}</span>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center ps-2">
+                                        <span class="fw-semibold">{{contact.name}}</span>
+                                        <span class="contact-event" :class="{'': response, 'd-none': !response}">sta scrivendo...</span>
+                                    </div>
+                                   
                                 </div>
                                 <div class="my-option pe-3 d-flex align-items-center">
                                     <i class="fa-solid fa-circle-notch"></i>
@@ -120,7 +124,7 @@
             </div>
         </body>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
     <script src="./js/utility.js"></script>
     <script src="./js/script.js"></script>
 </body>

@@ -122,6 +122,10 @@ body{
     background-image: url(../img/mine.jpg);
     padding:60px 10px;
 }
+/* CHAT HEADER */
+.contact-event{
+    color: grey;
+}
 .mess-sent{
     background-color: var(--send-green);
     padding: 15px 15px;
