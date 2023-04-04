@@ -233,9 +233,19 @@ createApp({
                 status: 'sent'
             };
             this.contacts[this.chatId].messages.push(newMessage);
-            this.textMessage = '',
-            console.log(this.textMessage)
+            this.textMessage = ''
+            
+            const botMessage = {
+                date: '',
+                message: 'Ok!',
+                status: 'received'
+            };
+            setTimeout(() => {
+                this.contacts[this.chatId].messages.push(botMessage);
+            },1500)
+            
         }
+        
  },
     mounted() {
 
