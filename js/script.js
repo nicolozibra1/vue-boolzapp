@@ -233,6 +233,7 @@ createApp({
                 status: 'sent'
             };
             this.contacts[this.chatId].messages.push(newMessage);
+            this.textMessage = '',
             console.log(this.textMessage)
         }
  },
