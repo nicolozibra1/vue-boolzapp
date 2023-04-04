@@ -203,6 +203,7 @@ createApp({
             textMessage: '',
             response: null,
             liveTime: null,
+            lastMessage: '',
 
 
         }
@@ -247,18 +248,25 @@ createApp({
                 date: this.liveTime,
                 message: 'Ok!',
                 status: 'received'
-            };
+            };  
             setTimeout(() => {
                 this.contacts[this.chatId].messages.push(botMessage);
                 this.response = false;
+                this.$nextTick(() => {
+                    this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView()
+                })
+                
             },1500)
-            
+
         }
         
  },
     mounted() {
-        
-    }
+        for (let contact of this.contacts) {
+            const lastMessageIndex = contact.messages.length - 1;
+            this.lastMessage = contact.messages[lastMessageIndex].message;
+            console.log(this.lastMessage);
+    }}
     
 }).mount('#app');
 
