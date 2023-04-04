@@ -199,41 +199,33 @@ createApp({
             ],
             visible: false,
             chatId: 0,
-            messageEvent: null
-            
-            
-            
+            textContent: '' 
+
         }
     },
     
     methods: {
         selectChat(index){
-            chatId = index + 1;
+            this.chatId = index + 1;
             for(let i=0; i < this.contacts.length; i++){
                 if(i === index){
                     this.contacts[i].visible = true; // imposta il nuovo contatto su "true"
                 } 
                 else {
-                    this.contacts[i].visible = false; // imposta tutti gli altri contatti su "false"
+                    this.contacts[i].visible = false; // imposta tutti gli altri contatti su "false"  
                 }
             }
-            console.log(chatId)
-            console.log(this.contacts[index].visible)
+            console.log(this.chatId)
+            // console.log(this.contacts[index].visible)
             
         },
         messageStatus(index){
             for(let i = 0; i < this.contacts[index].messages.length; i++) {
-                currentStatus = this.contacts[index].messages[i].status
-                if(currentStatus === 'sent'){
-                    messageEvent = true;
-                }
-                else{
-                    messageEvent = false;
-                }
-                console.log(currentStatus, messageEvent);
-                }  
+                this.currentStatus = this.contacts[index].messages[i].status
+                this.textContent = this.contacts[index].messages[i].message
         }
     },
+ },
     mounted() {
 
     }

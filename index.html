@@ -91,33 +91,15 @@
                             </header>
                             <!-- CHAT-CONTAINER -->
                             <div class="chat-container">
-                                <div class="box-message">
-                                    <!-- ROW-SENT -->
-                                <div class="row m-0 mb-2 debug d-flex justify-content-end" id="sent">
-                                    <div class="col-6 debug">
-                                        <div class="mex-sent d-flex flex-column align-items-center gap-2">
-                                            <span class="mess-sent">Hai portato a spasso il cane?</span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- ROW-SENT -->
-                                <div class="row m-0 mb-2 debug d-flex justify-content-end" id="sent">
+                                <div class="row m-0 mb-2 debug d-flex" :class="{'justify-content-end' : msg.status === 'sent' }" id="sent" v-for="(msg, index) in contacts[chatId].messages">
                                     <div class="col-6 debug">
                                         <div class="mex-sent d-flex flex-column align-items-center gap-2">
-                                            <span class="mess-sent">Ricordati di stendere i panni</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ROW-RECEVIED -->
-                                <div class="row m-0  mb-2 debug" id="received">
-                                    <div class="col-6 debug">
-                                        <div class="mex-received d-flex flex-column align-items-center gap-2">
-                                            <span class="mess-recevied">Tutto fatto! Ieri sera sono andato a mangiare una pizza con i miei amici. Mi sono divertito!</span>
+                                            <span :class="{'mess-sent': msg.status === 'sent', 'mess-recevied' : msg.status === 'received'}">{{msg.message}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                                </div>
                                 
                             <!-- FOOTER CHAT -->
                             <footer class="d-flex justify-content-center align-items-center py-3 ">
