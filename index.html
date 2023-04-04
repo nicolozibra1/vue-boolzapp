@@ -107,7 +107,7 @@
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
                                 <div class="write-in w-100 ">
-                                    <input type="text" class="w-100 py-2 px-2 rounded-2 border-0" placeholder="Scrivi un messaggio">
+                                    <input type="text" class="w-100 py-2 px-2 rounded-2 border-0" placeholder="Scrivi un messaggio" v-model.trim="textMessage" @keyup.enter="sendMessage()">
                                 </div>
                                 <div class="record-voice ">
                                     <i class="fa-solid fa-microphone"></i>

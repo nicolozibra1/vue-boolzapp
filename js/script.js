@@ -199,7 +199,8 @@ createApp({
             ],
             visible: false,
             chatId: 0,
-            textContent: '' 
+            textContent: '',
+            textMessage: '' 
 
         }
     },
@@ -223,8 +224,17 @@ createApp({
             for(let i = 0; i < this.contacts[index].messages.length; i++) {
                 this.currentStatus = this.contacts[index].messages[i].status
                 this.textContent = this.contacts[index].messages[i].message
+            }
+        },
+        sendMessage(){
+            const newMessage = {
+                date: '',
+                message: this.textMessage,
+                status: 'sent'
+            };
+            this.contacts[this.chatId].messages.push(newMessage);
+            console.log(this.textMessage)
         }
-    },
  },
     mounted() {
 
