@@ -132,6 +132,7 @@ body{
     border-radius: 8px;
     width: 80%;
     word-wrap: break-word;
+    position: relative;
 }
 .mess-recevied{
     background-color: white;
@@ -139,7 +140,16 @@ body{
     border-radius: 8px;
     width: 75%;
     word-wrap: break-word;
+    position: relative;
 }
+.execution-time{
+    font-size: 0.7rem;
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
+    color: rgba(0, 0, 0, 0.6);
+}
+/* CHAT FOOTER */
 footer{
     height: 60px;
 }
