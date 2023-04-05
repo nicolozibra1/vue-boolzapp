@@ -276,7 +276,6 @@ createApp({
         
  },
     mounted() {
-
 }
     
 }).mount('#app');

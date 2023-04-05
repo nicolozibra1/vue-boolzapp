@@ -74,8 +74,15 @@
                     </div>
 
                     <!-- CHAT-COLUMN -->
-                    <div class="col-12 col-xl-8 p-0" id="main-chat" v-if="!contacts.visible">
-                        <div id="main-chat" class="d-flex flex-column" v-for="(contact, index) in contacts" :class="{'d-none': !contact.visible}">
+                    <div class="col-12 col-xl-8 p-0" id="main-chat"  v-for="(contact, index) in contacts">
+                        <div class="welcome h-100 d-flex flex-column justify-content-center align-items-center" v-if="chatId === index" :class="{'d-none': contact.visible}">
+                            <img src="./img/welcome.png" alt="" class="">
+                            <span class="fs-1 fw-light">BoolZapp Web</span>
+                            <span class="text-center">Invia e ricevi messaggi senza mantenere il telefono connesso a Internet. <br>
+                            Usa BoolZapp su un massimo di 4 dispositivi collegati e 1 telefono contemporaneamente.</span>
+                        </div>
+                        
+                        <div id="main-chat" class="d-flex flex-column"  v-for="(contact, index) in contacts" :class="{'d-none': !contact.visible}">
                             <!-- HEADER-CHAT -->
                             <header class="header-col d-flex align-items-center justify-content-between" >
                                 <div class="my-account d-flex align-items-center">
