@@ -212,7 +212,6 @@ createApp({
             textMessage: '',
             response: null,
             liveTime: null,
-            lastMessage:''
 
 
         }
@@ -268,18 +267,12 @@ createApp({
                 
             },1500)
 
-        }
+        },
         
  },
     mounted() {
-        for (currentChat of this.contacts) {
-            lastMessageIndex = currentChat.messages.length - 1;
-            this.lastMessage = currentChat.messages[lastMessageIndex].message;
-            
-            
-            
-            console.log(this.lastMessage);
-    }}
+
+}
     
 }).mount('#app');
 
