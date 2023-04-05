@@ -212,11 +212,10 @@ createApp({
             textMessage: '',
             response: null,
             liveTime: null,
-
-
+            searchTerm: ''
         }
     },
-    
+
     methods: {
         selectChat(index){
             this.chatId = index;
@@ -233,6 +232,12 @@ createApp({
             // console.log(this.contacts[index].visible)
             
         },
+        filterContacts() {
+            const filteredContacts = this.contacts.filter(contact => {
+              return contact.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+            })
+            return filteredContacts
+          },
         messageStatus(index){
             for(let i = 0; i < this.contacts[index].messages.length; i++) {
                 this.currentStatus = this.contacts[index].messages[i].status
